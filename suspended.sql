@@ -1,3 +1,3 @@
 ALTER TABLE tblSTUDENT_DORMROOM
 ADD CONSTRAINT chk_Suspension 
-CHECK 
+CHECK (¯\_(ツ)_/¯)
