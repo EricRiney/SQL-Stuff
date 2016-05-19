@@ -1,0 +1,44 @@
+Monitoring Database
+
+  SQL Server Profiler -> What is Happening, what is executing
+      millions and millions of rows
+      takes a while to set up
+      filter on suspects
+        "trace"
+        "log"
+  System monitor ("PerfMon") -> What is the Impact
+  1st Activity Monitor -> High-level who is connected
+  1st Task Manager -> High-level resource consumption
+  Brief intro into DMVs -> Will tell us any level of detail
+  SQL Queries -> Will tell us any level of detail
+
+  Old-school queries
+
+  Baseline: System/Platform Behavior
+    software
+    users
+    hardware
+    network
+Regular occurence (once a month)
+
+Know Database Environment
+    Transactions
+    Data Flow
+    Customers
+    Hardware
+    Database Objects
+    Skills of DBA staff
+
+Tracing
+  Clint-Side (bad) incurs substantial resource overhead
+  Server-Side(good) term line stuff
+
+Saving a Trace
+  File
+    greater flexibility in managing data output
+    built-in function fn_trace_gettaable allows converting multiple files into a single table
+  Table
+    incurs substantial resource overhead
+    avoid if possible
+Defining a Trace
+  sp_who

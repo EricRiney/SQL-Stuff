@@ -105,3 +105,22 @@ RETURN
 
 ubuntu@ip-172-31-40-93:~/goWorkSpace$ go install $GOFISH
 ubuntu@ip-172-31-40-93:~/goWorkSpace$ $RUNFISH
+
+Dear recruiters,
+
+Java is to JavaScript as Car is to carpet.  
+
+Best, 
+
+Developers 
+Mathematicians
+Scientists
+
+
+// i realize now that gregHeyGirlHeeey and 
+// feelTheDavidStearns might seem like dadaesqe 
+// var name choices but if you examine the function
+// bruh() youll see a rather elegant solution to a problem
+// that doesnt really exist in this program
+//
+// thank you again for you understanding in these difficult times   
