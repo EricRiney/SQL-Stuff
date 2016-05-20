@@ -12,4 +12,9 @@ Optimazition
     Config
     DAta access
     Inexes  
-    
+
+Sequential write 
+Range Reads
+
+Scan vs Seek (?)
+
