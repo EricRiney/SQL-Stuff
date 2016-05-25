@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-/*POPULATE SHIPMENT*/
+/*POPULATE CUST_LINE_ITME_SHIP*/
 /*Riney 5/20/2016*/
 CREATE PROC ADD_CUST_LINE_ITME_SHIP
 
@@ -14,15 +14,17 @@ CREATE PROC ADD_CUST_LINE_ITME_SHIP
 
 AS
 
-DECLARE @LocationCount INT = (SELECT COUNT(*) FROM Location)
+--DECLARE @LocationCount INT = (SELECT COUNT(*) FROM Location)
 
 BEGIN TRAN riney01
 
 WHILE @Run > 0
     BEGIN
-    DECLARE @LocationID INT = Round((Rand()*(@LocationCount-1)+1),0)
+    DECLARE @CUST_Line_Item_ID INT = 
+    DECLARE @Line_Item_Ship_ID INT = 
+    
     INSERT INTO CUSTOMER_LINE_ITEM_SHIPMENT(CustomerLineItemID, LineItemShipmentID)
-    VALUES(@locationID)
+    VALUES(@CUST_Line_Item_ID, @Line_Item_Ship_ID)
     SET @RUN = @RUN - 1
     END
 

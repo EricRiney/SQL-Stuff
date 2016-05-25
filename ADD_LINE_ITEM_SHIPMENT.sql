@@ -18,7 +18,7 @@ BEGIN TRAN RINEY01
         DECLARE @ShipID INT = (SELECT TOP 1 * FROM SHIPMENT WHERE ShipmentID = @shipCount)
         DECLARE @shipDate DATE = (GETDATE())
         INSERT INTO  Line_Item_Shipment(Date, ShipmentID)
-        VALUES (@shipDate, @ShipID)
+        VALUES (@ShipID, @shipDate)
     END
 IF @@ERROR <> 0
 ROLLBACK TRAN RINEY01
