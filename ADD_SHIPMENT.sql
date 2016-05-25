@@ -10,26 +10,26 @@ GO
 /*Riney 5/20/2016*/
 CREATE PROC ADD_SHIPMENT
 
-@Run int
+@Run INT
 
 AS
 
-DECLARE @LocationCount Int = (Select Count(*) From Location)
+DECLARE @LocationCount INT = (SELECT COUNT(*) FROM Location)
 
-BEGIN tran g1
+BEGIN TRAN riney01
 
 WHILE @Run > 0
     BEGIN
-    Declare @LocationID Int = Round((Rand()*(@LocationCount-1)+1),0)
+    DECLARE @LocationID INT = Round((Rand()*(@LocationCount-1)+1),0)
     INSERT INTO SHIPMENT(LocationID)
     VALUES(@locationID)
     SET @RUN = @RUN - 1
     END
 
 if @@error <> 0
-rollback tran g1
+rollback tran riney01
 else 
-commit tran g1
+commit tran riney01
 
 
 
