@@ -8,7 +8,7 @@ GO
 
 /*POPULATE SHIPMENT*/
 /*Riney 5/20/2016*/
-CREATE PROC ADD_SHIPMENT
+CREATE PROC ADD_CUST_LINE_ITME_SHIP
 
 @Run INT
 
@@ -21,7 +21,7 @@ BEGIN TRAN riney01
 WHILE @Run > 0
     BEGIN
     DECLARE @LocationID INT = Round((Rand()*(@LocationCount-1)+1),0)
-    INSERT INTO SHIPMENT(LocationID)
+    INSERT INTO CUSTOMER_LINE_ITEM_SHIPMENT(CustomerLineItemID, LineItemShipmentID)
     VALUES(@locationID)
     SET @RUN = @RUN - 1
     END
