@@ -11,6 +11,7 @@ GO
 CREATE PROC ADD_CUST_LINE_ITME_SHIP
 
 @ProductID INT
+@ShipmentID INT
 
 AS
 
@@ -20,8 +21,8 @@ DECLARE @Cust_Line_Item_ID INT
 DECLARE @Line_Item_Ship_ID INT
 
 BEGIN TRAN riney01
-    SET @Cust_Line_Item_ID = (SELECT TOP 1 * FROM Cust_Line_Item WHERE ProductID = @ProductID)
-    SET @Line_Item_Ship_ID INT = 
+    SET @Cust_Line_Item_ID = (SELECT TOP 1 * FROM Customer_Line_Item WHERE ProductID = @ProductID)
+    SET @Line_Item_Ship_ID = (SELECT TOP 1 * FROM Line_Item_Shipment WHERE ShipmentID = @ShipmentID)
     
     INSERT INTO CUSTOMER_LINE_ITEM_SHIPMENT(CustomerLineItemID, LineItemShipmentID)
     VALUES(@CUST_Line_Item_ID, @Line_Item_Ship_ID)
