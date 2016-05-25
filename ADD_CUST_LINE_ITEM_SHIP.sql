@@ -10,23 +10,21 @@ GO
 /*Riney 5/20/2016*/
 CREATE PROC ADD_CUST_LINE_ITME_SHIP
 
-@Run INT
+@ProductID INT
 
 AS
 
---DECLARE @LocationCount INT = (SELECT COUNT(*) FROM Location)
+--DECLARE @Cust_Line_Item_Count INT = (SELECT COUNT(*) FROM Customer_Line_Item)
+
+DECLARE @Cust_Line_Item_ID INT 
+DECLARE @Line_Item_Ship_ID INT
 
 BEGIN TRAN riney01
-
-WHILE @Run > 0
-    BEGIN
-    DECLARE @CUST_Line_Item_ID INT = 
-    DECLARE @Line_Item_Ship_ID INT = 
+    SET @Cust_Line_Item_ID = (SELECT TOP 1 * FROM Cust_Line_Item WHERE ProductID = @ProductID)
+    SET @Line_Item_Ship_ID INT = 
     
     INSERT INTO CUSTOMER_LINE_ITEM_SHIPMENT(CustomerLineItemID, LineItemShipmentID)
     VALUES(@CUST_Line_Item_ID, @Line_Item_Ship_ID)
-    SET @RUN = @RUN - 1
-    END
 
 if @@error <> 0
 rollback tran riney01
