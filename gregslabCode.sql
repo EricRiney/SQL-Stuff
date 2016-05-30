@@ -1,5 +1,3 @@
-
-
 /*
 Create the database and run script to create all tables.
 */
@@ -65,9 +63,6 @@ GO
 Create computed columns.
 */
 
-
-
-
 CREATE FUNCTION fnCalc_LI_PriceExtd (@LineItemID INT)
 RETURNS numeric(12,2)
 AS
@@ -100,14 +95,6 @@ GO
 
 ALTER TABLE tblORDER
 ADD TotalAmount AS (dbo.fnCalc_ORDER_TotalAmount(OrderID))
-
-
-
-
-
-
-
-
 
 
 /*
@@ -160,14 +147,6 @@ VALUES
 ('Diet Coke', (SELECT ProdTypeID FROM tblPRODUCT_TYPE WHERE ProdTypeName = 'Food and Beverage'), 4.90),
 ('Cheese Burger', (SELECT ProdTypeID FROM tblPRODUCT_TYPE WHERE ProdTypeName = 'Food and Beverage'), 10.90)
 GO
-
-
-
-
-
-
-
-
 
 
 /*
